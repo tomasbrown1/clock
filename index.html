@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<style>
+			* {
+				padding: 0px;
+				margin: 0px;
+			}
+
+			.marker {
+				width: 20px;
+				height: 100px;
+				background-color: #000;
+				left: 50%;
+				top: 350px;
+				display: inline-block;
+				position: absolute;
+			}
+
+			#m01 {
+				transform: rotate(30deg) translateY(-350px);
+			}
+
+			#m02 {
+				transform: rotate(60deg) translateY(-350px);
+			}
+
+			#m03 {
+				transform: rotate(90deg) translateY(-350px);
+			}
+
+			#m04 {
+				transform: rotate(120deg) translateY(-350px);
+			}
+
+			#m05 {
+				transform: rotate(150deg) translateY(-350px);
+			}
+
+			#m06 {
+				transform: rotate(180deg) translateY(-350px);
+			}
+
+			#m07 {
+				transform: rotate(210deg) translateY(-350px);
+			}
+
+			#m08 {
+				transform: rotate(240deg) translateY(-350px);
+			}
+
+			#m09 {
+				transform: rotate(270deg) translateY(-350px);
+			}
+
+			#m10 {
+				transform: rotate(300deg) translateY(-350px);
+			}
+
+			#m11 {
+				transform: rotate(330deg) translateY(-350px);
+			}
+
+			#m12 {
+				transform: rotate(360deg) translateY(-350px);
+			}
+
+			.hands {
+				position: absolute;
+			}
+
+			#sec {
+				left: calc(50% + 5px);
+				top: 225px;
+				height: 350px;
+				width: 10px;
+				background-color: #000;
+			}
+
+			#min {
+				left: calc(50%);
+				top: 250px;
+				height: 300px;
+				width: 20px;
+				background-color: #000;
+			}
+
+			#hour {
+				left: calc(50% - 5px);
+				top: 300px;
+				height: 200px;
+				width: 30px;
+				background-color: #000;
+			}
+
+			#middle {
+				left: calc(50% - 15px);
+				top: 375px;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				background-color: #000;
+				position: absolute;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="container">
+			<div class="marker" id="m01"></div>
+			<div class="marker" id="m02"></div>
+			<div class="marker" id="m03"></div>
+			<div class="marker" id="m04"></div>
+			<div class="marker" id="m05"></div>
+			<div class="marker" id="m06"></div>
+			<div class="marker" id="m07"></div>
+			<div class="marker" id="m08"></div>
+			<div class="marker" id="m09"></div>
+			<div class="marker" id="m10"></div>
+			<div class="marker" id="m11"></div>
+			<div class="marker" id="m12"></div>
+			<div class="hands" id="sec"></div>
+			<div class="hands" id="min"></div>
+			<div class="hands" id="hour"></div>
+			<div id="middle"></div>
+		</div>
+
+		<script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
+		<script>
+			setInterval(function() {
+				var d = new Date();
+				var s = d.getSeconds();
+				var m = d.getMinutes();
+				var h = d.getHours();;
+
+				$('#sec').css('transform', 'rotate(' + s*6 + 'deg) translateY(-175px)');
+				$('#min').css('transform', 'rotate(' + m*6 + 'deg) translateY(-150px)');
+				$('#hour').css('transform', 'rotate(' + h*30 + 'deg) translateY(-100px)');
+			}, 100);
+		</script>
+	</body>
+</html>
