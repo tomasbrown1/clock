@@ -148,8 +148,8 @@
 			setInterval(function() {
 				var d = new Date();
 				var s = d.getSeconds();
-				var m = d.getMinutes();
-				var h = d.getHours();;
+				var m = d.getMinutes() + (s/60);
+				var h = d.getHours() + (m/60);
 
 				$('#sec').css('transform', 'rotate(' + s*6 + 'deg) translateY(-175px)');
 				$('#min').css('transform', 'rotate(' + m*6 + 'deg) translateY(-150px)');
